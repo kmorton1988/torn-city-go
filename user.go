@@ -429,6 +429,10 @@ type User struct {
 			Law       int `json:"law"`
 			Grocer    int `json:"grocer"`
 		} `json:"jobs"`
+		Companies map[string]*struct {
+			Name   int `json:"name"`
+			Points int `json:"job_points"`
+		}
 	} `json:"jobpoints"`
 	Merits *struct {
 		NerveBar              int `json:"Nerve Bar"`
