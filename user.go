@@ -380,7 +380,7 @@ type User struct {
 			GroupAttack int    `json:"groupAttack"`
 			Overseas    int    `json:"overseas"`
 			ChainBonus  string `json:"chainBonus"`
-		}
+		} `json:"modifiers"`
 	} `json:"attacks"`
 	Revives map[string]*struct {
 	} `json:"revives"` // TODO
