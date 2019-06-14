@@ -64,7 +64,6 @@ type Company struct {
 		Timestamp int    `json:"timestamp"`
 		News      string `json:"news"`
 	} `json:"news"`
-	Timestamp int `json:"timestamp"`
 }
 
 // GetCompany returns data for a specific Torn company, by ID.
