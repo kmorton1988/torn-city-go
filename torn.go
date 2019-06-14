@@ -26,7 +26,6 @@ const (
 // stateful data, such as item prices.
 type Session struct {
 	apiKey string
-	items  map[string]Item
 }
 
 // NewSession returns a *Session
