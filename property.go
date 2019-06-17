@@ -26,9 +26,9 @@ type Property struct {
 	UsersLiving string `json:"users_living"`
 }
 
-// GetProperty returns data for a specific Torn property, by ID.
+// QueryProperty returns data for a specific Torn property, by ID.
 // See https://www.torn.com/api.html
-func (s *Session) GetProperty(ID int) (property *Property, err error) {
+func (s *Session) QueryProperty(ID int) (property *Property, err error) {
 	var propertyID string
 	if ID != 0 {
 		propertyID = strconv.Itoa(ID)
