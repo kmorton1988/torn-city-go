@@ -475,10 +475,10 @@ type User struct {
 	Timestamp int `json:"timestamp"`
 }
 
-// GetUser returns data for a specific Torn user, by ID.
-// GetUser can take multiple additional options for addition data.
+// QueryUser returns data for a specific Torn user, by ID.
+// QueryUser can take multiple additional options for addition data.
 // See https://www.torn.com/api.html
-func (s *Session) GetUser(ID int, args ...string) (user *User, err error) {
+func (s *Session) QueryUser(ID int, args ...string) (user *User, err error) {
 	var userID string
 	if ID != 0 {
 		userID = strconv.Itoa(ID)
