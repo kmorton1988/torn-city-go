@@ -220,11 +220,12 @@ type Torn struct {
 // QueryTorn can take multiple IDs for various elements, as well as extra
 // arguments for additional data.
 // See https://www.torn.com/api.html
-func (s *Session) QueryTorn(ID int, args ...string) (tornData *Torn, err error) {
-	var userID string
-	if ID != 0 {
-		userID = strconv.Itoa(ID)
+func (s *Session) QueryTorn(IDs []int, args ...string) (tornData *Torn, err error) {
+	var qIDs string
+	for _, ID := range IDs {
+		qIDs += strconv.Itoa(ID) + ","
 	}
+	qIDs = strings.TrimSuffix(qIDs, ",")
 
 	var selections string
 	for _, arg := range args {
@@ -232,7 +233,7 @@ func (s *Session) QueryTorn(ID int, args ...string) (tornData *Torn, err error) 
 	}
 	selections = strings.TrimSuffix(selections, ",")
 
-	data, err := s.callAPI(apiTorn+endpoint(userID), map[string]string{"selections": selections})
+	data, err := s.callAPI(apiTorn+endpoint(qIDs), map[string]string{"selections": selections})
 	if err != nil {
 		return
 	}
