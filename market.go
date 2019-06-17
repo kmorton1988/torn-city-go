@@ -25,11 +25,11 @@ type Market struct {
 	Timestamp int `json:"timestamp"`
 }
 
-// GetMarketValue returns data for a specific Torn Item, by ID.
-// GetMarketValue supports bazaar data as well as the item market and points market.
+// QueryMarket returns data for a specific Torn Item, by ID.
+// QueryMarket supports bazaar data as well as the item market and points market.
 // An item ID is not necessary for the points market.
 // See https://www.torn.com/api.html
-func (s *Session) GetMarketValue(ID int, args ...string) (market *Market, err error) {
+func (s *Session) QueryMarket(ID int, args ...string) (market *Market, err error) {
 	var itemID string
 	if ID != 0 {
 		itemID = strconv.Itoa(ID)
