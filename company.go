@@ -66,10 +66,10 @@ type Company struct {
 	} `json:"news"`
 }
 
-// GetCompany returns data for a specific Torn company, by ID.
-// GetCompany can take multiple additional options for addition data.
+// QueryCompany returns data for a specific Torn company, by ID.
+// QueryCompany can take multiple additional options for addition data.
 // See https://www.torn.com/api.html
-func (s *Session) GetCompany(ID int, args ...string) (company *Company, err error) {
+func (s *Session) QueryCompany(ID int, args ...string) (company *Company, err error) {
 	var companyID string
 	if ID != 0 {
 		companyID = strconv.Itoa(ID)
