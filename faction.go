@@ -52,7 +52,7 @@ func (s *Session) QueryFaction(ID int, args ...string) (faction *Faction, err er
 	}
 	selections = strings.TrimSuffix(selections, ",")
 
-	data, err := s.callAPI(apiUser+endpoint(factionID), map[string]string{"selections": selections})
+	data, err := s.callAPI(apiFaction+endpoint(factionID), map[string]string{"selections": selections})
 	if err != nil {
 		return
 	}
