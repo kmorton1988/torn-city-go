@@ -84,7 +84,7 @@ type User struct {
 		ID          int    `json:"ID"`
 		Name        string `json:"name"`
 		Type        string `json:"type"`
-		Quantity    string `json:"quantity"`
+		Quantity    int    `json:"quantity"`
 		Equipped    int    `json:"equipped"`
 		MarketPrice int    `json:"market_price"`
 	} `json:"inventory"`
