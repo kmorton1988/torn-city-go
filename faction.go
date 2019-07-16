@@ -34,6 +34,8 @@ type Faction struct {
 		MoneyBalance  int64  `json:"money_balance"`
 		PointsBalance int64  `json:"points_balance"`
 	} `json:"donations"`
+	Points int64 `json:"points"`
+	Money  int64 `json:"money"`
 	// TODO there is a lot left for faction data.
 }
 
